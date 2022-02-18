@@ -1,8 +1,21 @@
+from flask import Flask, render_template
 import pyaudio
 import wave
-
 import requests
 import json
+
+app = Flask(__name__)
+
+@app.route('/')
+def hello():
+    return render_template("webh.html")
+
+# @webserver.route('/execute')
+# def exe():
+#     return //음성녹음이 실행되는 html을 넣어야 하나..?
+
+if __name__ == '__main__' :
+    app.run(debug = True)
 
 CHUNK = 1024
 FORMAT = pyaudio.paInt16
